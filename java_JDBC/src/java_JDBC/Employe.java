@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Employe {
@@ -297,7 +298,53 @@ public class Employe {
 		}
 
 	//exercice 9
-		public void exo9() {
+		public void exo9() {			
+				Scanner scan = new Scanner(System.in);
+				System.out.println("Que voulez vous? \r"
+						+ "1-Afficher la liste des employés\r"
+						+ "2-Ajouter un employé\r"
+						+ "3-Afficher le détail d'un employé\r"
+						+ "4-Modifier un employé\r"
+						+ "5-Supprimer un employé\r");
+				try {
+					int nom = scan.nextInt();
+					 switch(nom){
+					   
+				       case 1: 
+				           liste_emp();
+				           break;
+				   
+				       case 2:
+				           nom_scan();
+				           break;
+				   
+				       case 3:
+				           System.out.println("Buenos dias");
+				           break;
+				           
+				       case 4:
+				           System.out.println("Buenos dias");
+				           break;
+				          
+				       case 5:
+				           System.out.println("Buenos dias");
+				           break;
+				       default:
+				           System.out.println("Choix incorrect");
+				           exo9();
+				           break;
+				   }
+				} catch (InputMismatchException e) {
+					
+					System.out.println("Entrée invalide,entrez un chiffre en 1 et 5");
+					exo9();
+				}
+				
+			scan.close();
+		}
+		
+	//Ajouter un employer
+		private void exo9_ajout_emp() {
 			try {
 				//charger la classe de driver
 				
@@ -310,26 +357,21 @@ public class Employe {
 				//créer l'objet statement
 				
 				Scanner scan = new Scanner(System.in);
-				System.out.println("Que voulez vous? \r"
-						+ "1-Afficher la liste des employés\r"
-						+ "2-Ajouter un employé\r"
-						+ "3-Afficher le détail d'un employé\r"
-						+ "4-Modifier un employé\r"
-						+ "5-Supprimer un employé\r");
-				String nom = scan.nextLine();
+				System.out.println("combien gagnez vous?");
+				String sal = scan.nextLine();
 				
 				Statement statement = connexion.createStatement();
 				 
 				
 				ResultSet requete = statement.executeQuery("select *\r\n"
 						+ "from emp\r\n"
-						+ "where lower(nom) like lower('%"+nom+"%')");
+						+ "where sal > "+sal+"");
 				
 				//executer la requete 
-				
+				System.out.println("voici la liste des gens plus riche que vous:");
 				while(requete.next()) {
 					
-					System.out.println(requete.getInt("noemp")+"  "+requete.getString("nom") +"  "+requete.getString("prenom")+"  "+requete.getString("emploi")+"  "+requete.getInt("sup")+"  "+requete.getDate("embauche")+"  "+requete.getDouble("sal")+"  "+requete.getDouble("comm")+"  "+requete.getInt("noserv"));
+					System.out.println(requete.getString("nom")+"  "+requete.getString("emploi")+"  "+requete.getDouble("sal")+"  "+requete.getInt("noserv"));
 					
 				}
 			
@@ -343,8 +385,8 @@ public class Employe {
 				System.out.println("ca marche pô");
 			
 			}	
+		
 		}
-
 	
 	
 //fin

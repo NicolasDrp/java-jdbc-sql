@@ -1,7 +1,8 @@
-# java-jdbc-sql
+# ### exercice java sql
 Partir de la base de données sur l’entreprise (table emp et serv).
 Toutes les requêtes demandées doivent être traitées en Java via JDBC.
-Pour rappel, voici les tables et les données présentes dans la base
+Voici les tables et les données présentes dans la base
+
 CREATE TABLE emp(
 noemp NUMERIC NOT NULL,
 nom varchar(150),
@@ -13,7 +14,8 @@ sal NUMERIC(9,2),
 comm numeric(9,2),
 noserv NUMERIC(2)
 ) ;
--- altération de la table emp et ajout d'une contrainte de clé primaire
+
+## altération de la table emp et ajout d'une contrainte de clé primaire
 
 ALTER TABLE emp ADD CONSTRAINT pk_emp PRIMARY KEY (noemp) ;
 create table serv
@@ -99,32 +101,55 @@ insert into serv values (5,'INFORMATIQUE','LILLE');
 insert into serv values (6,'COMPTABILITE','LILLE');
 insert into serv values (7,'TECHNIQUE','ROUBAIX');
 REQUETE AVEC DES STATEMENTS
-EXERCICE 1
+
+### EXERCICE 1
+
 Connecter la base de données créée en Java
-EXERCICE 2
+
+### EXERCICE 2
+
 Afficher à l’écran la liste des employés
-EXERCICE 3
+
+### EXERCICE 3
+
 Afficher à l’écran la liste des employés du service 5
-EXERCICE 4
+
+### EXERCICE 4
+
 Afficher à l’écran la liste des employés du service INFORMATIQUE
-EXERCICE 5
+
+### EXERCICE 5
+
 Afficher à l’écran la liste des employés dont le nom est saisi par l’utilisateur
-EXERCICE 6
+
+### EXERCICE 6
+
 Afficher à l’écran la liste des employés dont la date d’embauche est comprise dans l’année saisie par
+
 l’utilisateur
-EXERCICE 7
+
+### EXERCICE 7
+
 Afficher à l’écran la liste des employés dont le nom contient une chaîne de caractères saisie par l’utilisateur
-EXERCICE 8
+
+### EXERCICE 8
+
 Afficher à l’écran les noms, emploi, salaire, numéro de service de tous les employés du service saisi par
+
 l’utilisateur et qui gagnent plus d’un salaire saisi par l’utilisateur
-EXERCICE 9
+
+### EXERCICE 9
+
 Créer un menu (Console Java) permettant de :
 - Afficher la liste des employés
 - Afficher le détail d’un employé
 - Ajouter un employé
 - Modifier un employé à partir de son nom et prénom
 - Supprimer un employé à partir de son nom et prénom
+
 Créer les traitements et les requêtes correspondantes pour que les données soient modifiées en base de
 données selon les choix de l’utilisateur.
-REQUETES AVEC DES PREPARED STATEMENT
-Reprendre les requêtes des exercices 3 à 9 en utilisant des Prepared Statement quand c’est possible
+
+## REQUETES AVEC DES PREPARED STATEMENT
+
+Reprendre les requêtes des ### exercices 3 à 9 en utilisant des Prepared Statement quand c’est possible

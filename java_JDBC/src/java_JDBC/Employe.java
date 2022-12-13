@@ -268,7 +268,7 @@ public class Employe {
 				
 				Scanner scan = new Scanner(System.in);
 				System.out.println("combien gagnez vous?");
-				String sal = scan.nextLine();
+				double sal = scan.nextDouble();
 				
 				Statement statement = connexion.createStatement();
 				 
@@ -384,7 +384,7 @@ public class Employe {
 				double sal = scan.nextDouble();
 				
 				System.out.println("commisison touché:");
-				int comm = scan.nextInt();
+				double comm = scan.nextDouble();
 				
 				System.out.println("numéro de service:");
 				int noserv = scan.nextInt();
@@ -420,7 +420,6 @@ public class Employe {
 				//fermer la connexion
 				
 				connexion.close();
-				scan.close();
 			} catch (Exception e) {
 				System.out.println("entrée invalide , vérifier vos informations");
 				exo9_ajout_emp();

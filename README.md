@@ -1,4 +1,4 @@
-# ### exercice java sql
+# exercice java sql
 Partir de la base de données sur l’entreprise (table emp et serv).
 Toutes les requêtes demandées doivent être traitées en Java via JDBC.
 Voici les tables et les données présentes dans la base
@@ -152,4 +152,4 @@ données selon les choix de l’utilisateur.
 
 ## REQUETES AVEC DES PREPARED STATEMENT
 
-Reprendre les requêtes des ### exercices 3 à 9 en utilisant des Prepared Statement quand c’est possible
+Reprendre les requêtes des exercices 3 à 9 en utilisant des Prepared Statement quand c’est possible
